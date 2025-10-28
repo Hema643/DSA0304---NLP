@@ -1,0 +1,30 @@
+import re
+
+# Sample text
+text = "The rain in Spain falls mainly in the plain."
+
+# Example 1: Using re.match() - checks for a match only at the beginning of the string
+match_result = re.match(r"The", text)
+if match_result:
+    print("Match found:", match_result.group())
+else:
+    print("No match found at the beginning")
+
+# Example 2: Using re.search() - searches the entire string for the first occurrence
+search_result = re.search(r"Spain", text)
+if search_result:
+    print("Search found:", search_result.group())
+else:
+    print("No match found")
+
+# Example 3: Using re.findall() - finds all occurrences of a pattern
+findall_result = re.findall(r"in", text)
+print("All occurrences of 'in':", findall_result)
+
+# Example 4: Using re.sub() - replaces all occurrences of a pattern
+replaced_text = re.sub(r"in", "on", text)
+print("Text after replacement:", replaced_text)
+
+# Example 5: Using re.split() - splits text based on pattern
+split_result = re.split(r"\s", text)
+print("Split text into words:", split_result)
